@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Škola hrou | Edu-Box CZ</title>
-    <!-- Knihovny pro vzhled a ikony -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- React a Babel (umožní spustit React kód přímo v HTML) -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-image { object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease; }
+        .hero-image:hover { transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-white">
@@ -22,7 +22,6 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Pomocná komponenta pro ikony z knihovny Lucide
         const Icon = ({ name, size = 20, className = "" }) => {
             useEffect(() => {
                 if (window.lucide) { window.lucide.createIcons(); }
@@ -33,7 +32,6 @@
         const App = () => {
             const [view, setView] = useState('home');
 
-            // --- DATA PRO PORTÁL ---
             const lessons4 = [
                 { id: "PL01", name: "01 Stroj času a osa dějin", month: "Září", icon: "history", desc: "Úvod do chronologie a barvy historických epoch.", file: "metodika_4_01.pdf" },
                 { id: "PL02", name: "02 Lovci mamutů", month: "Říjen", icon: "tent", desc: "První obydlí z kostí a kůží. Statika kužele.", file: "metodika_4_02.pdf" },
@@ -79,7 +77,6 @@
                         </nav>
 
                         <div className="max-w-7xl mx-auto p-8 md:p-12">
-                            {/* ADMINISTRATIVA */}
                             <section className="mb-16">
                                 <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-6 flex items-center gap-3">
                                     <Icon name="scale" size={16}/> Administrativa pro školy
@@ -101,7 +98,6 @@
                                 </div>
                             </section>
 
-                            {/* 4. TŘÍDA */}
                             <section className="mb-16">
                                 <div className="flex items-center gap-4 mb-10">
                                     <div className="bg-blue-600 text-white p-3 rounded-2xl shadow-xl shadow-blue-900/20"><Icon name="map" size={24}/></div>
@@ -124,7 +120,6 @@
                                 </div>
                             </section>
 
-                            {/* 5. TŘÍDA */}
                             <section>
                                 <div className="flex items-center gap-4 mb-10">
                                     <div className="bg-red-600 text-white p-3 rounded-2xl shadow-xl shadow-red-900/20"><Icon name="history" size={24}/></div>
@@ -153,7 +148,6 @@
 
             return (
                 <div className="min-h-screen bg-white text-left">
-                    {/* NAV */}
                     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-lg z-[100] border-b border-slate-100 px-6 h-20 flex justify-between items-center">
                         <div className="flex items-center gap-3">
                             <div className="bg-red-600 p-1.5 rounded-xl text-white shadow-lg"><Icon name="box" size={24}/></div>
@@ -164,7 +158,7 @@
                         </button>
                     </nav>
 
-                    {/* HERO */}
+                    {/* HERO SEKCE S OBRÁZKEM */}
                     <header className="pt-48 pb-32 px-6 bg-slate-50 relative overflow-hidden">
                         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                             <div className="text-left animate-in fade-in slide-in-from-left-8 duration-700">
@@ -188,10 +182,16 @@
                                 </div>
                             </div>
                             <div className="relative">
-                                <div className="bg-white p-4 rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.15)] border-2 border-slate-100 overflow-hidden aspect-square flex items-center justify-center bg-slate-100">
-                                    <Icon name="camera" size={64} className="opacity-10 text-slate-400"/>
+                                {/* ZDE JE VLOŽENÝ OBRÁZEK NAMÍSTO IKONY */}
+                                <div className="bg-white p-4 rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.15)] border-2 border-slate-100 overflow-hidden aspect-square flex items-center justify-center">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1000" 
+                                        alt="Edu-Box NM-650 Konstrukce" 
+                                        className="hero-image rounded-[3.5rem]"
+                                        onerror="this.src='https://via.placeholder.com/800x800?text=Edu-Box+NM-650'"
+                                    />
                                 </div>
-                                <div className="absolute -bottom-8 -right-8 bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl border-b-[12px] border-red-600 text-left">
+                                <div className="absolute -bottom-8 -right-8 bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl border-b-[12px] border-red-600 text-left z-10">
                                     <div className="flex items-center gap-4 mb-2">
                                         <Icon name="zap" size={32} className="text-red-600"/>
                                         <p className="text-6xl font-black leading-none italic">20+</p>
@@ -202,7 +202,6 @@
                         </div>
                     </header>
 
-                    {/* FILOZOFIE */}
                     <section className="py-32 px-6 bg-white border-t">
                         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
                             <div>
