@@ -36,7 +36,6 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // OPRAVA: Komponenta Icon nyní používá useRef, aby se předešlo konfliktům s DOMem Reactu
         const Icon = ({ name, size = 20, className = "" }) => {
             const iconRef = useRef(null);
 
@@ -127,15 +126,15 @@
                                             <h3 className="font-black uppercase text-lg mb-2 leading-tight">Edu-Box NM-650</h3>
                                             <p className="text-xs text-slate-500 font-bold uppercase italic leading-relaxed">Technická specifikace, certifikace a obsah balení.</p>
                                         </div>
-                                        <a href="technicky_list.pdf" className="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-red-600 transition-all shadow-lg">Technický list (PDF)</a>
+                                        <a href="technicky_list.pdf" download="technicky_list.pdf" className="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-red-600 transition-all shadow-lg">Technický list (PDF)</a>
                                     </div>
                                     <div className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-200 flex flex-col justify-between">
                                         <div>
                                             <Icon name="shield-check" className="text-blue-600 mb-4" size={32} />
                                             <h3 className="font-black uppercase text-lg mb-2 leading-tight">Smlouva o dílo</h3>
-                                            <p className="text-xs text-slate-500 font-bold uppercase italic leading-relaxed">Vzorová smlouva pro nákup v rámci Šablon JAK.</p>
+                                            <p className="text-xs text-slate-500 font-bold uppercase italic leading-relaxed">Vzorová smlouva pro nákup v rámci Šablon OP JAK.</p>
                                         </div>
-                                        <a href="smlouva_o_dilo.pdf" className="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-blue-600 transition-all shadow-lg">Stáhnout smlouvu (PDF)</a>
+                                        <a href="smlouva_o_dilo.pdf" download="smlouva_o_dilo.pdf" target="_blank" className="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-blue-600 transition-all shadow-lg">Stáhnout smlouvu (PDF)</a>
                                     </div>
                                     <div className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-200 flex flex-col justify-between">
                                         <div>
@@ -143,7 +142,7 @@
                                             <h3 className="font-black uppercase text-lg mb-2 leading-tight">Podklady pro MAS</h3>
                                             <p className="text-xs text-slate-500 font-bold uppercase italic leading-relaxed">Prezentace projektu pro regionální setkání.</p>
                                         </div>
-                                        <a href="prezentace.pptx" className="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-green-600 transition-all shadow-lg">Prezentace (PPTX)</a>
+                                        <a href="prezentace.pptx" download="prezentace.pptx" className="mt-6 w-full bg-slate-900 text-white py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-green-600 transition-all shadow-lg">Prezentace (PPTX)</a>
                                     </div>
                                 </div>
                             </section>
@@ -153,7 +152,7 @@
                                     <Icon name="eye" size={16}/> Metodický cyklus výuky
                                 </h2>
                                 <div className="bg-white p-6 rounded-[3rem] shadow-xl border border-slate-200 overflow-hidden text-center">
-                                    <img src="infografika edubox 650.png" alt="Infografika" className="w-full rounded-3xl" onerror="this.src='https://via.placeholder.com/1200x600?text=Metodika+EduBox'" />
+                                    <img src="infografika%20edubox%20650.png" alt="Infografika" className="w-full rounded-3xl" onerror="this.src='https://via.placeholder.com/1200x600?text=Metodika+EduBox'" />
                                 </div>
                             </section>
 
@@ -176,7 +175,7 @@
                                                 <h3 className="text-sm font-black uppercase mb-1 leading-tight">{l.name}</h3>
                                                 <p className="text-[10px] text-slate-400 font-bold uppercase italic">Materiál {l.id}</p>
                                             </div>
-                                            <a href={l.file} className="mt-6 w-full bg-slate-50 text-slate-900 py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-slate-950 hover:text-white transition-all">Stáhnout PDF</a>
+                                            <a href={l.file} download={l.file} className="mt-6 w-full bg-slate-50 text-slate-900 py-3 rounded-xl text-[10px] font-black uppercase text-center hover:bg-slate-950 hover:text-white transition-all">Stáhnout PDF</a>
                                         </div>
                                     ))}
                                 </div>
@@ -210,7 +209,7 @@
                             <div className="text-left flex-1 w-full reveal text-left">
                                 <div className="flex flex-wrap items-center gap-3 mb-10 text-left">
                                     <span className="bg-slate-100 text-slate-900 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest italic border border-slate-200">Škola hrou</span>
-                                    <span className="bg-red-600 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg">Šablony JAK</span>
+                                    <span className="bg-red-600 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg italic">Šablony OP JAK</span>
                                     <span className="bg-blue-600 text-white px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg italic">Vyrobeno v Novém Malíně</span>
                                 </div>
                                 <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight leading-[0.85] mb-10 uppercase italic text-slate-950">
@@ -278,14 +277,19 @@
                         <div className="max-w-4xl mx-auto reveal">
                             <span className="bg-red-50 text-red-600 px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-widest mb-8 inline-block border border-red-100 italic font-bold">Limitovaná pilotní série 2026</span>
                             <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-10 leading-[0.9] text-slate-950">Máte zájem? <br/>Rezervujte si svůj box.</h2>
+                            
+                            <div className="bg-red-600 text-white p-6 rounded-2xl mb-12 inline-block shadow-2xl animate-bounce">
+                                <p className="text-lg font-black uppercase italic tracking-wider">🔥 Speciální nabídka: Pro prvních 20 škol 1 BOX NAVÍC ZDARMA!</p>
+                            </div>
+
                             <p className="text-xl text-slate-500 font-medium italic leading-relaxed mb-12 max-w-2xl mx-auto">
-                                Pro předběžnou rezervaci a specifikaci požadavků (sady, zaškolení, dodání) prosím využijte náš krátký dotazník na Google Forms. Ozveme se vám zpět.
+                                Pro předběžnou rezervaci, zaslání pozvánky na <b>webinář</b> a specifikaci požadavků (sady, zaškolení, dodání) prosím využijte náš krátký dotazník. Ozveme se vám zpět.
                             </p>
                             
                             <div className="flex flex-col md:flex-row justify-center gap-6 mb-16">
                                 <div className="bg-slate-50 p-6 rounded-[2rem] flex items-center gap-4 border border-slate-100">
-                                    <div className="bg-white p-3 rounded-2xl text-red-600 shadow-sm"><Icon name="check-square" size={24}/></div>
-                                    <div className="text-left"><p className="font-black uppercase text-[10px] italic">Konfigurace</p><p className="text-slate-500 text-xs italic font-bold">Na klíč dle potřeb</p></div>
+                                    <div className="bg-white p-3 rounded-2xl text-red-600 shadow-sm"><Icon name="monitor" size={24}/></div>
+                                    <div className="text-left"><p className="font-black uppercase text-[10px] italic">Webinář</p><p className="text-slate-500 text-xs italic font-bold">Ukázka online</p></div>
                                 </div>
                                 <div className="bg-slate-50 p-6 rounded-[2rem] flex items-center gap-4 border border-slate-100">
                                     <div className="bg-white p-3 rounded-2xl text-blue-600 shadow-sm"><Icon name="truck" size={24}/></div>
@@ -303,14 +307,17 @@
                         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-start text-white">
                             <div>
                                 <h2 className="text-xs font-black uppercase tracking-[0.5em] text-red-500 mb-8 italic font-bold">MAS & MAP Podpora</h2>
-                                <h3 className="text-5xl md:text-6xl font-black uppercase italic tracking-tighter mb-10 leading-[0.95] text-white">Regionální prezentace<br/>na poradách ředitelů</h3>
-                                <p className="text-xl text-slate-400 font-medium italic leading-relaxed mb-12 max-w-lg">Přijedeme k vám do regionu. Předvedeme systém všem ředitelům najednou a probereme technickou specifikaci pro Šablony JAK.</p>
+                                <h3 className="text-5xl md:text-6xl font-black uppercase italic tracking-tighter mb-10 leading-[0.95] text-white">Regionální prezentace<br/>za podpory MAS</h3>
+                                <p className="text-xl text-slate-400 font-medium italic leading-relaxed mb-12 max-w-lg">Přijedeme k vám do regionu. Předvedeme systém zástupcům škol a probereme technickou specifikaci pro Šablony OP JAK.</p>
                             </div>
                             <div className="bg-white/5 p-12 rounded-[4rem] border border-white/10">
                                 <Icon name="users" size={48} className="text-red-500 mb-8"/>
                                 <h4 className="text-2xl font-black uppercase italic mb-6">Jak probíhá zaškolení?</h4>
                                 <ul className="space-y-6">
-                                    <li className="flex gap-4"><Icon name="check" size={20} className="text-green-500 shrink-0"/><p className="text-slate-300 italic">4-hodinový akreditovaný workshop přímo u vás.</p></li>
+                                    <li className="flex gap-4">
+                                        <Icon name="check" size={20} className="text-green-500 shrink-0"/>
+                                        <p className="text-slate-300 italic">Zaškolení probíhá pomocí <b>webináře</b>, případně zaškolíme v rámci regionu v navržených termínech.</p>
+                                    </li>
                                     <li className="flex gap-4"><Icon name="check" size={20} className="text-green-500 shrink-0"/><p className="text-slate-300 italic">Ukázka 3D blueprintů pro novou informatiku.</p></li>
                                     <li className="flex gap-4"><Icon name="check" size={20} className="text-green-500 shrink-0"/><p className="text-slate-300 italic">Konzultace k financování z OP JAK.</p></li>
                                 </ul>
