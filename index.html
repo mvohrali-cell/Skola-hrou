@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Architekti dějin | Škola hrou</title>
     
-    <!-- Externí knihovny -->
+    <!-- Knihovny pro běh přímo v prohlížeči -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -29,7 +29,6 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // Komponenta pro ikony Lucide
         const Icon = ({ name, size = 20, className = "" }) => {
             const iconRef = useRef(null);
             useEffect(() => {
@@ -45,7 +44,6 @@
             const [grade, setGrade] = useState(4);
             const [currentImg, setCurrentImg] = useState(0);
             
-            // ODKAZ NA FORMULÁŘ A OBRÁZKY
             const googleFormUrl = "https://forms.gle/RhHPDeaRrZQ1vspMA";
             const heroImages = ["image_8920a3.jpg", "foto2.jpg", "foto3.jpg"];
 
@@ -107,12 +105,12 @@
                         <Nav />
                         <div className="max-w-7xl mx-auto p-8 md:p-12 space-y-16">
                             <section className="reveal">
-                                <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-8 flex items-center gap-3">
+                                <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-8 flex items-center gap-3 text-left">
                                     <Icon name="file-text" size={16}/> Školní dokumentace
                                 </h2>
-                                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
                                     <div className="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-200 flex flex-col justify-between hover:shadow-2xl transition-all">
-                                        <div><Icon name="award" className="text-red-600 mb-4" size={24} /><h3 className="font-black uppercase text-sm mb-2 text-slate-950">Edu-Box NM-650</h3><p className="text-[10px] text-slate-500 italic leading-tight">Technický list a obsah.</p></div>
+                                        <div><Icon name="award" className="text-red-600 mb-4" size={24} /><h3 className="font-black uppercase text-sm mb-2 text-slate-950">Edu-Box NM-650</h3><p className="text-[10px] text-slate-500 italic leading-tight">Technický list sady.</p></div>
                                         <a href="technicky_list.pdf" download className="mt-4 w-full bg-slate-900 text-white py-2.5 rounded-xl text-[9px] font-black uppercase text-center hover:bg-red-600 transition-all shadow-md">Stáhnout PDF</a>
                                     </div>
                                     <div className="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-200 flex flex-col justify-between hover:shadow-2xl transition-all">
@@ -120,12 +118,12 @@
                                         <a href="smlouva_o_dílo.pdf" download="smlouva_o_dílo.pdf" className="mt-4 w-full bg-slate-900 text-white py-2.5 rounded-xl text-[9px] font-black uppercase text-center hover:bg-blue-600 transition-all shadow-md">Stáhnout PDF</a>
                                     </div>
                                     <div className="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-200 flex flex-col justify-between hover:shadow-2xl transition-all">
-                                        <div><Icon name="presentation" className="text-green-600 mb-4" size={24} /><h3 className="font-black uppercase text-sm mb-2 text-slate-950">Prezentace</h3><p className="text-[10px] text-slate-500 italic">Kompletní vize projektu.</p></div>
+                                        <div><Icon name="presentation" className="text-green-600 mb-4" size={24} /><h3 className="font-black uppercase text-sm mb-2 text-slate-950">Naše prezentace</h3><p className="text-[10px] text-slate-500 italic leading-tight">Vize projektu.</p></div>
                                         <a href="prezentace.pptx" download className="mt-4 w-full bg-slate-900 text-white py-2.5 rounded-xl text-[9px] font-black uppercase text-center hover:bg-green-600 transition-all shadow-md">Stáhnout PPTX</a>
                                     </div>
                                     <div className="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-200 flex flex-col justify-between hover:shadow-2xl transition-all ring-2 ring-red-500">
-                                        <div><Icon name="file-edit" className="text-red-500 mb-4" size={24} /><h3 className="font-black uppercase text-sm mb-2 text-slate-950">Grantové podklady</h3><p className="text-[10px] text-slate-500 italic leading-tight">Texty do žádosti o Šablony.</p></div>
-                                        <a href="podklady_pro_sablony.pdf" download className="mt-4 w-full bg-slate-950 text-white py-2.5 rounded-xl text-[9px] font-black uppercase text-center hover:bg-red-600 transition-all shadow-md">Text do grantu</a>
+                                        <div><Icon name="file-edit" className="text-red-500 mb-4" size={24} /><h3 className="font-black uppercase text-sm mb-2 text-slate-950 text-left">Grantové podklady</h3><p className="text-[10px] text-slate-500 italic leading-tight text-left">Podklady do žádosti OP JAK.</p></div>
+                                        <a href="podklady_pro_sablony.pdf" download className="mt-4 w-full bg-red-600 text-white py-2.5 rounded-xl text-[9px] font-black uppercase text-center hover:bg-slate-900 transition-all shadow-md">Text do grantu</a>
                                     </div>
                                 </div>
                             </section>
@@ -167,16 +165,16 @@
                     <Nav />
                     <header className="pt-64 pb-32 px-8 bg-white overflow-hidden relative">
                         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-                            <div className="flex-1 reveal">
-                                <div className="flex flex-wrap items-center gap-3 mb-10 text-left text-left">
+                            <div className="flex-1 reveal text-left">
+                                <div className="flex flex-wrap items-center gap-3 mb-10 text-left">
                                     <span className="bg-slate-100 text-slate-900 px-4 py-2 rounded-xl text-[10px] font-black uppercase italic border border-slate-200">Škola hrou</span>
                                     <span className="bg-red-600 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase shadow-lg italic">V rámci RVP</span>
                                     <span className="bg-slate-900 text-white px-5 py-2 rounded-xl text-[10px] font-black uppercase shadow-lg italic font-bold">Šablony OP JAK</span>
                                 </div>
-                                <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tight leading-[0.85] mb-10 uppercase italic text-slate-950 text-left text-left">
+                                <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tight leading-[0.85] mb-10 uppercase italic text-slate-950 text-left">
                                     Děti staví<br/><span className="text-gradient">Dějiny</span>
                                 </h1>
-                                <p className="text-2xl text-slate-500 font-medium leading-relaxed mb-12 max-w-2xl italic border-l-[10px] border-red-600 pl-10 text-left text-left">
+                                <p className="text-2xl text-slate-500 font-medium leading-relaxed mb-12 max-w-2xl italic border-l-[10px] border-red-600 pl-10 text-left">
                                     Mezipředmětové vazby v praxi. Dějepis, vlastivěda, <b>matematika</b> i <b>nová informatika</b> v jedné sadě LEGO® kostek.
                                 </p>
                                 <div className="flex flex-wrap gap-6 text-left">
@@ -184,40 +182,40 @@
                                         Vstoupit do výuky <Icon name="arrow-right" size={24} className="group-hover:translate-x-3 transition-transform text-white" />
                                     </button>
                                     <div className="bg-white px-10 py-6 rounded-[2.5rem] border-2 border-slate-100 flex flex-col justify-center shadow-sm font-bold text-left">
-                                        <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-1 leading-none text-left text-left">Metodika v tištěné</p>
-                                        <p className="text-lg font-black text-slate-950 italic leading-none uppercase text-left text-left">i webové verzi</p>
+                                        <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-1 leading-none text-left">Metodika v tištěné</p>
+                                        <p className="text-lg font-black text-slate-950 italic leading-none uppercase text-left">i webové verzi</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="relative w-full lg:max-w-[480px] reveal" style={{animationDelay: '0.2s'}}>
-                                <div className="bg-white p-3 rounded-[4.5rem] shadow-[0_60px_120px_rgba(0,0,0,0.12)] border border-slate-100 overflow-hidden aspect-[3/4] flex items-center justify-center transform lg:-rotate-1 hover:rotate-0 transition-all duration-700 relative">
+                                <div className="bg-white p-3 rounded-[4.5rem] shadow-[0_60px_120px_rgba(0,0,0,0.12)] border border-slate-100 overflow-hidden aspect-[3/4] flex items-center justify-center transform lg:-rotate-1 hover:rotate-0 transition-all duration-700 relative text-left">
                                     {heroImages.map((img, idx) => (
                                         <img key={img} src={img} alt={`Slide ${idx}`} className={`absolute inset-0 w-full h-full object-cover rounded-[4rem] transition-opacity duration-1000 ${idx === currentImg ? 'opacity-100' : 'opacity-0'}`} />
                                     ))}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none"></div>
                                 </div>
-                                <div className="absolute -bottom-10 -left-10 bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl z-20 max-w-[240px] border-8 border-white text-left text-left">
-                                    <Icon name="brain" size={40} className="mb-4 text-red-500"/><p className="text-sm font-black uppercase tracking-widest leading-tight italic text-white text-left text-left">Okamžitě připraveno k používání</p>
+                                <div className="absolute -bottom-10 -left-10 bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl z-20 max-w-[240px] border-8 border-white text-left">
+                                    <Icon name="brain" size={40} className="mb-4 text-red-500"/><p className="text-sm font-black uppercase tracking-widest leading-tight italic text-white text-left">Okamžitě připraveno k používání</p>
                                 </div>
                             </div>
                         </div>
                     </header>
 
-                    <section id="ekonomika" className="py-24 px-8 bg-slate-900 text-white border-y border-white/5 text-left text-left">
+                    <section id="ekonomika" className="py-24 px-8 bg-slate-900 text-white border-y border-white/5 text-left">
                         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
-                            <div className="lg:col-span-2 text-white">
+                            <div className="lg:col-span-2 text-white text-left">
                                 <h2 className="text-4xl font-black uppercase italic mb-8 leading-none">Financování a výbava</h2>
                                 <p className="text-xl text-slate-400 font-medium italic leading-relaxed mb-8 italic text-left">Plně hrazeno ze <b>Šablon OP JAK</b>. Systém "otevři a uč" bez složitých příprav.</p>
-                                <div className="grid sm:grid-cols-2 gap-10 text-left text-left">
+                                <div className="grid sm:grid-cols-2 gap-10 text-left">
                                     <div className="bg-white/5 p-8 rounded-3xl border border-white/10 text-left">
                                         <p className="text-5xl font-black text-red-500 mb-2 italic">49 500 Kč</p>
                                         <p className="text-xs font-black uppercase tracking-widest text-slate-300">Cena za kompletní třídní sadu</p>
                                         <p className="text-[10px] text-slate-400 mt-4 uppercase font-bold italic">Včetně tištěné i webové metodiky</p>
                                     </div>
-                                    <div className="flex flex-col justify-center space-y-4 font-bold">
+                                    <div className="flex flex-col justify-center space-y-4 font-bold text-left">
                                         <div className="flex items-center gap-4"><Icon name="box" className="text-red-500" size={20}/><p className="text-sm italic">10x Třídní jednotka (650 LEGO® dílů na dvojici)</p></div>
-                                        <div className="flex items-center gap-4"><Icon name="book" className="text-red-500" size={20}/><p className="text-sm italic font-black uppercase">Fyzická i webová metodika</p></div>
-                                        <div className="flex items-center gap-4"><Icon name="monitor" className="text-blue-500" size={20}/><p className="text-sm italic font-black uppercase">Úvodní webinář v ceně</p></div>
+                                        <div className="flex items-center gap-4 text-left"><Icon name="book-open" className="text-red-500" size={20}/><p className="text-sm italic font-black uppercase">Metodika: Kniha + Digitální portál</p></div>
+                                        <div className="flex items-center gap-4 text-left"><Icon name="monitor" className="text-blue-500" size={20}/><p className="text-sm italic font-black uppercase">Úvodní webinář v ceně</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -228,9 +226,9 @@
                         <div className="max-w-4xl mx-auto reveal text-left">
                             <h2 className="text-5xl md:text-7xl font-black uppercase italic mb-10 text-slate-950 leading-[0.9]">Rezervujte si svůj box.</h2>
                             <div className="bg-slate-50 border-2 border-slate-900/10 p-10 rounded-[3rem] mb-12 flex flex-col md:flex-row items-center gap-8 w-full text-left">
-                                <div className="bg-slate-900 text-white p-6 rounded-2xl rotate-[-2deg] shadow-lg text-left text-left"><p className="text-sm font-black text-center text-left">Bonus 2026</p><Icon name="award" size={40} className="mx-auto mt-2 text-red-500"/></div>
-                                <div className="text-left text-slate-900">
-                                    <p className="text-2xl font-black uppercase italic tracking-wider leading-tight">Speciální nabídka pro prvních 20 škol:</p>
+                                <div className="bg-slate-900 text-white p-6 rounded-2xl rotate-[-2deg] shadow-lg text-left"><p className="text-sm font-black text-center text-left">Bonus 2026</p><Icon name="award" size={40} className="mx-auto mt-2 text-red-500"/></div>
+                                <div className="text-left text-slate-900 text-left">
+                                    <p className="text-2xl font-black uppercase italic tracking-wider leading-tight text-slate-950">Speciální nabídka pro prvních 20 škol:</p>
                                     <p className="text-4xl font-black uppercase mt-1 text-red-600">1x 650 LEGO® dílů NAVÍC</p>
                                     <p className="text-xs font-bold uppercase tracking-[0.1em] text-slate-400 mt-3 italic text-left">Dostanete 11. sadu dílů zdarma jako bonusovou jednotku pro učitele.</p>
                                 </div>
@@ -244,12 +242,12 @@
 
                     <footer className="bg-slate-950 text-white py-24 px-8 border-t-[10px] border-red-600 text-left">
                         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16 text-center md:text-left text-left">
-                            <div className="text-left text-left">
-                                <div className="flex items-center gap-4 mb-6 text-red-600 text-left text-left"><Icon name="brick-wall" size={44}/><span className="text-4xl font-black uppercase italic text-white text-left text-left">Architekti dějin</span></div>
-                                <p className="text-[11px] font-bold uppercase tracking-[0.5em] opacity-40 text-left text-left">Nový Malín // Martin Vohralík // 2026</p>
+                            <div className="text-left">
+                                <div className="flex items-center gap-4 mb-6 text-red-600 text-left"><Icon name="brick-wall" size={44}/><span className="text-4xl font-black uppercase italic text-white">Architekti dějin</span></div>
+                                <p className="text-[11px] font-bold uppercase tracking-[0.5em] opacity-40 text-left">Nový Malín // Martin Vohralík // 2026</p>
                             </div>
                             <div className="text-right">
-                                <p className="text-[11px] font-black uppercase mb-3 opacity-40 text-right text-right">Kontakt a podpora</p>
+                                <p className="text-[11px] font-black uppercase mb-3 opacity-40 text-right">Kontakt a podpora</p>
                                 <a href="mailto:vohralmartin@gmail.com" className="text-2xl font-black underline decoration-red-600 decoration-4 underline-offset-[12px] hover:text-red-500 transition-colors text-right">vohralmartin@gmail.com</a>
                             </div>
                         </div>
