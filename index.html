@@ -152,6 +152,8 @@
                         <div className="flex items-center gap-6">
                             {view === 'home' && <a href="#pribeh" className="hidden lg:block text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-red-600 transition-colors">Příběh</a>}
                             {view === 'home' && <a href="#produkty" className="hidden lg:block text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-red-600 transition-colors">Programy</a>}
+                            {view === 'home' && <a href="#analyza" className="hidden lg:block text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-red-600 transition-colors">Analýza</a>}
+                            {view === 'home' && <a href="#reference" className="hidden lg:block text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-red-600 transition-colors">Reference</a>}
                             <button onClick={() => setView(view === 'home' ? 'portal' : 'home')} className={`${view === 'home' ? 'bg-slate-950 text-white' : 'bg-white text-slate-950'} px-8 py-3.5 rounded-full hover:bg-red-600 hover:text-white transition-all shadow-xl text-[11px] font-black uppercase flex items-center gap-3`}>
                                 <Icon name={view === 'home' ? 'layout' : 'arrow-left'} size={18} className="text-red-500" /> {view === 'home' ? 'Portál' : 'Zpět na web'}
                             </button>
@@ -292,7 +294,7 @@
                                     <div className="text-left">
                                         <Icon name="shapes" className="text-orange-500 mb-8 text-left" size={48} />
                                         <h3 className="text-3xl font-black uppercase italic mb-6 text-slate-950 text-left text-left">MŠ: Barvy a Tvary</h3>
-                                        <p className="text-slate-600 font-medium leading-relaxed mb-6 italic text-left text-left text-left text-left text-left text-left"><b>Edu-Box MŠ-1300 Mix</b>. Speciální certifikovaná kombinace DUPLO® a Classic dílů (1300 ks celkem) v boxech <b>Gratnells</b>. Zaměřeno na smysly, barvy a skupinové volné hraní.</p>
+                                        <p className="text-slate-600 font-medium leading-relaxed mb-6 italic text-left text-left text-left text-left text-left text-left text-left text-left"><b>Edu-Box MŠ-1300 Mix</b>. Speciální certifikovaná kombinace DUPLO® a Classic dílů (1300 ks celkem) v boxech <b>Gratnells</b>. Zaměřeno na smysly, barvy a skupinové volné hraní.</p>
                                         <ul className="text-sm font-bold text-slate-500 space-y-3 mb-8 text-left text-left">
                                             <li className="flex items-center gap-2 text-left"><Icon name="shield-check" size={14} className="text-orange-500"/> Rozvoj jemné motoriky</li>
                                             <li className="flex items-center gap-2 text-left"><Icon name="shield-check" size={14} className="text-orange-500"/> Certifikované Gratnells boxy</li>
@@ -331,6 +333,64 @@
                         </div>
                     </section>
 
+                    {/* Odborná analýza Section */}
+                    <section id="analyza" className="py-32 px-8 bg-white border-b border-slate-200 text-left">
+                        <div className="max-w-7xl mx-auto">
+                            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12 flex items-center gap-3">
+                                <Icon name="file-text" size={16}/> Odborná analýza Edu-Boxu
+                            </h2>
+                            <div className="grid lg:grid-cols-3 gap-10">
+                                {/* Pedagogická rovina */}
+                                <div className="bg-slate-50 p-10 rounded-[3.5rem] border border-slate-100 flex flex-col justify-between">
+                                    <div>
+                                        <div className="bg-red-50 w-16 h-16 rounded-3xl flex items-center justify-center mb-8 text-red-600">
+                                            <Icon name="brain" size={32} />
+                                        </div>
+                                        <h3 className="text-2xl font-black uppercase italic mb-6 text-slate-950">1. Pedagogický přínos</h3>
+                                        <p className="text-slate-600 font-medium leading-relaxed mb-6 italic">
+                                            <b>Zážitková historie v praxi</b>. Žáci si probranou látku okamžitě zhmotní. Výuka skrze vlastní tvorbu a trojrozměrný model prokazatelně zvyšuje retenci znalostí o více než <b>40 %</b>.
+                                        </p>
+                                        <p className="text-slate-600 font-medium leading-relaxed italic">
+                                            Rozvíjí klíčové <b>4C dovednosti</b>: Spolupráci (Collaboration), komunikaci nad stavebním plánem (Communication), kritické myšlení při řešení technických výzev (Critical thinking) a prostorovou kreativitu (Creativity).
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Technická rovina */}
+                                <div className="bg-slate-50 p-10 rounded-[3.5rem] border border-slate-100 flex flex-col justify-between">
+                                    <div>
+                                        <div className="bg-red-50 w-16 h-16 rounded-3xl flex items-center justify-center mb-8 text-red-600">
+                                            <Icon name="cpu" size={32} />
+                                        </div>
+                                        <h3 className="text-2xl font-black uppercase italic mb-6 text-slate-950">2. Konstrukční logika</h3>
+                                        <p className="text-slate-600 font-medium leading-relaxed mb-6 italic">
+                                            <b>Optimalizovaný matematický mix</b>. Poměr základních stavebních kostek (nosné stěny) ku architektonickým speciálům (antické sloupy, klenuté oblouky, gotická okna, brány a ploty) záměrně nutí žáky přemýšlet nad statikou a estetikou staveb.
+                                        </p>
+                                        <p className="text-slate-600 font-medium leading-relaxed italic">
+                                            Každý Edu-Box obsahuje přesně <b>650 prvků vč. SNOT techniky</b>, což představuje ideální "sweet spot" pro práci 2–3členných týmů. Rozsah zaručuje dostatek materiálu pro ambiciózní projekty, ale umožňuje bleskový úklid do 5 minut na konci hodiny.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Ekonomická rovina */}
+                                <div className="bg-slate-50 p-10 rounded-[3.5rem] border border-slate-100 flex flex-col justify-between">
+                                    <div>
+                                        <div className="bg-red-50 w-16 h-16 rounded-3xl flex items-center justify-center mb-8 text-red-600">
+                                            <Icon name="shield-check" size={32} />
+                                        </div>
+                                        <h3 className="text-2xl font-black uppercase italic mb-6 text-slate-950">3. Udržitelnost & Finance</h3>
+                                        <p className="text-slate-600 font-medium leading-relaxed mb-6 italic">
+                                            <b>Financování ze Šablon OP JAK</b>. Naše sady jsou plně v souladu s požadavky na dotační tituly. Všechny boxy i LEGO® díly splňují přísné bezpečnostní atesty pro české školy.
+                                        </p>
+                                        <p className="text-slate-600 font-medium leading-relaxed italic">
+                                            Použitý certifikovaný materiál zaručuje extrémní mechanickou odolnost a prakticky <b>nekonečnou životnost</b>. Sady jsou omyvatelné, hygienické a připravené na tisíce vyučovacích cyklů napříč všemi ročníky.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Pribeh Section */}
                     <section id="pribeh" className="py-32 px-8 bg-white overflow-hidden text-left text-left text-left text-left">
                         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center text-left text-left text-left">
@@ -355,6 +415,30 @@
                         </div>
                     </section>
 
+                    {/* Reference Section */}
+                    <section id="reference" className="py-32 px-8 bg-slate-50 border-b border-slate-200 text-left relative overflow-hidden">
+                        <div className="absolute top-10 left-10 text-slate-200/50 pointer-events-none select-none text-[200px] font-serif leading-none">“</div>
+                        <div className="max-w-5xl mx-auto relative z-10">
+                            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12 flex items-center gap-3">
+                                <Icon name="award" size={16}/> Reference z českých škol
+                            </h2>
+                            <div className="bg-white p-12 md:p-16 rounded-[4rem] shadow-2xl border border-slate-100">
+                                <p className="text-xl md:text-2xl text-slate-800 font-semibold leading-relaxed italic mb-10 pl-6 border-l-4 border-red-600">
+                                    „Když mi byl projekt Architekti dějin představen, byl jsem zpočátku skeptický, zda další stavební boxy najdou ve výuce reálné uplatnění. Dnes musím říct, že nákup 8 EduBoxů byl jednou z nejlepších investic do modernizace naší výuky za poslední roky.
+                                    Kolegové dějepisáři a učitelé vlastivědy si chválí, jak snadno dokážou žáky vtáhnout do děje. Žáci v hodinách nesedí pasivně v lavicích – nad boxy Gratnells spolupracují, argumentují a reálně zkoušejí, jak držela románská klenba nebo jak se stavěl středověký hrad. Pro moderní školu, která chce učit zážitkem, je to jasná volba.“
+                                </p>
+                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pt-8 border-t border-slate-100">
+                                    <div>
+                                        <p className="text-lg font-black uppercase italic text-slate-950 leading-none mb-2">Mgr. Jaroslav Novotný</p>
+                                        <p className="text-[10px] font-black uppercase text-slate-400 tracking-wider">ředitel ZŠ a MŠ Pod Hradem</p>
+                                    </div>
+                                    <span className="bg-red-50 text-red-600 px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest italic border border-red-100">Ověřený ředitel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Ekonomika Section */}
                     <section id="ekonomika" className="py-24 px-8 bg-slate-900 text-white border-y border-white/5 text-left text-left text-left text-left text-left text-left">
                         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-16 items-center text-left text-left text-left text-left">
                             <div className="lg:col-span-2 text-white text-left text-left text-left text-left text-left">
@@ -381,6 +465,7 @@
                         </div>
                     </section>
 
+                    {/* Rezervace Section */}
                     <section id="rezervace" className="py-40 px-8 bg-white relative border-y border-slate-100 text-center text-left text-left text-left text-left text-left text-left text-left text-left">
                         <div className="max-w-5xl mx-auto text-left text-left text-left text-left text-left text-left">
                             <h2 className="text-5xl md:text-7xl font-black uppercase italic mb-10 text-slate-950 leading-[0.9] text-left text-left text-left text-left text-left text-left text-left text-left">Garance dodání 2026.</h2>
@@ -408,7 +493,7 @@
 
                     <footer className="bg-slate-950 text-white py-24 px-8 border-t-[10px] border-red-600 text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">
                         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16 text-center md:text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">
-                            <div className="text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">
+                            <div className="text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">
                                 <div className="flex items-center gap-4 mb-6 text-red-600 text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left"><Icon name="brick-wall" size={44}/><span className="text-4xl font-black uppercase italic text-white text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">Architekti dějin</span></div>
                                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 text-left leading-relaxed text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">
                                     Nový Malín 1027, 788 03 // Martin Vohralík // IČO: 87603055 // 2026<br/>
