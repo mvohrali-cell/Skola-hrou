@@ -46,7 +46,7 @@
                     Naučte děti dějiny <span class="text-amber-400">vlastníma rukama</span>
                 </h1>
                 <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed">
-                    Profesionální didaktická stavebnice nabitá 6 500 prémiovými dílky pro celou školu. Obrovský fond elementů hravě uživí týmy až po 5 žácích na skupinu! Metodika pro 4. a 5. ročník v rámci RVP zcela zdarma.
+                    Profesionální didaktická stavebnice nabitá 6 500 prémiovými LEGO® dílky pro celou školu. Obrovský fond elementů hravě uživí týmy až po 5 žácích na skupinu! Metodika pro 4. a 5. ročník v rámci RVP zcela zdarma.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="#objednavka" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 text-center">
@@ -130,7 +130,7 @@
                         </div>
                         <div class="p-4 bg-amber-500/10 rounded-xl border border-amber-500/30">
                             <strong class="text-amber-400 block mb-1">🎯 Dotace a šablony JAK</strong>
-                            <p class="text-slate-300 text-xs">Uplatnitelné v rámci šablon pro MŠ a ZŠ. Oficiální LEGO® certifikace standard a přehledné třídění.</p>
+                            <p class="text-slate-300 text-xs">Uplatnitelné v rámci šablon pro MŠ a ZŠ. 100% originální LEGO® dílky a přehledné třídění.</p>
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                     <div class="flex items-start space-x-4">
                         <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl shrink-0">🧱</div>
                         <div>
-                            <h3 class="text-lg font-bold text-slate-900">6 500 dílků plných vychytávek</h3>
+                            <h3 class="text-lg font-bold text-slate-900">6 500 prémiových LEGO® dílky</h3>
                             <p class="text-slate-600 text-sm mt-1">Sada nabitá top dílky: okýnka, plotky, stříšky, SNOT techniky a speciální prvky dimenzované pro týmy až po 5 dětech na skupinu.</p>
                         </div>
                     </div>
@@ -232,7 +232,7 @@
                         Univerzální balíček pro celou školu s obrovským množstvím materiálů pro týmy až po 5 žácích.
                     </p>
                     <ul class="space-y-3 text-sm text-amber-50 mb-8 border-t border-white/20 pt-6">
-                        <li class="flex items-center gap-2">✓ 6 500 dílků (okýnka, plotky, stříšky, SNOT)</li>
+                        <li class="flex items-center gap-2">✓ 6 500 prémiových LEGO® dílků (okýnka, plotky, stříšky, SNOT)</li>
                         <li class="flex items-center gap-2">✓ Metodika pro 4. a 5. ročník RVP zdarma</li>
                         <li class="flex items-center gap-2">✓ 11 boxů Gratnells pro celou třídu</li>
                     </ul>
@@ -252,32 +252,38 @@
             </div>
 
             <div class="bg-slate-800 p-8 sm:p-10 rounded-3xl border border-slate-700 shadow-xl">
-                <form onsubmit="handleOrderSubmit(event)" class="space-y-6">
+                <!-- Úprava formuláře na službu Web3Forms -->
+                <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleOrderSubmit(event)" class="space-y-6">
+                    <!-- Skrytý klíč a směřování na Váš e-mail -->
+                    <input type="hidden" name="access_key" value="83ff2e4f-87e1-4fcc-8b81-dfe140d47c60">
+                    <input type="hidden" name="subject" value="Nezávazná poptávka sady Architekti dějin">
+                    <input type="hidden" name="from_name" value="Web Architekti Dějin">
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Název školy / Instituce</label>
-                            <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="např. ZŠ Nový Malín">
+                            <input type="text" name="skola" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="např. ZŠ Nový Malín">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Kontaktní osoba (Jméno a příjmení)</label>
-                            <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="Mgr. Jana Nováková">
+                            <input type="text" name="jmeno" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="Mgr. Jana Nováková">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">E-mailová adresa</label>
-                            <input type="email" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="reditelstvi@zskola.cz">
+                            <input type="email" name="email" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="reditelstvi@zskola.cz">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Telefonní číslo</label>
-                            <input type="tel" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="+420 123 456 789">
+                            <input type="tel" name="telefon" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="+420 123 456 789">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-slate-300 mb-2">Poznámka / Mám zájem o osobní ukázkovou hodinu zdarma</label>
-                        <textarea rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="Zde můžete uvést své dotazy nebo preferovaný termín ukázky..."></textarea>
+                        <textarea name="poznamka" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" placeholder="Zde můžete uvést své dotazy nebo preferovaný termín ukázky..."></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-4 rounded-xl shadow-lg transition-all text-center">
@@ -285,7 +291,7 @@
                     </button>
                 </form>
                 <div id="order-success" class="hidden mt-6 p-4 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 rounded-xl text-center font-medium">
-                    Děkujeme za poptávku! Vaše zpráva byla připravena. Brzy se vám ozveme.
+                    Děkujeme za poptávku! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.
                 </div>
             </div>
         </div>
@@ -311,15 +317,15 @@
                 <ul class="space-y-3 text-sm">
                     <li class="flex items-center gap-2">
                         <span>📧</span>
-                        <a href="mailto:info@architektidejin.cz" class="hover:text-amber-400 transition-colors">info@architektidejin.cz</a>
+                        <a href="mailto:vohralmartin@gmail.com" class="hover:text-amber-400 transition-colors">vohralmartin@gmail.com</a>
                     </li>
                     <li class="flex items-center gap-2">
                         <span>📞</span>
-                        <a href="tel:+420777XXXXXX" class="hover:text-amber-400 transition-colors">+420 777 XXX XXX</a>
+                        <a href="tel:+420606077327" class="hover:text-amber-400 transition-colors">+420 606 077 327</a>
                     </li>
                     <li class="flex items-center gap-2">
                         <span>📍</span>
-                        <span>Nový Malín / okres Šumperk & Jeseník</span>
+                        <span>Nový Malín 1027, okres Šumperk</span>
                     </li>
                 </ul>
             </div>
@@ -329,25 +335,49 @@
                 <p class="text-sm mb-4">
                     Máte zájem o osobní návštěvu a předvedení stavebnice přímo ve vaší škole? Neváhejte se ozvat.
                 </p>
-                <a href="mailto:info@architektidejin.cz" class="inline-block bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2.5 rounded-xl text-sm transition-all border border-slate-700">
+                <a href="mailto:vohralmartin@gmail.com" class="inline-block bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2.5 rounded-xl text-sm transition-all border border-slate-700">
                     Napsat autorovi
                 </a>
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
-            &copy; 2026 Architekti dějin (Martin Vohralík, Nový Malín). Všechna práva vyhrazena.
+            &copy; 2026 Architekti dějin (Martin Vohral, Nový Malín). Všechna práva vyhrazena.
         </div>
     </footer>
 
     <script>
-        function handleOrderSubmit(event) {
+        async function handleOrderSubmit(event) {
             event.preventDefault();
-            const successBox = document.getElementById('order-success');
-            successBox.classList.remove('hidden');
-            event.target.reset();
-            setTimeout(() => {
-                successBox.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            
+            submitBtn.innerText = 'Odesílám...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    const successBox = document.getElementById('order-success');
+                    successBox.classList.remove('hidden');
+                    form.reset();
+                    setTimeout(() => {
+                        successBox.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                } else {
+                    alert('Při odesílání dochází k chybě. Prosím kontaktujte nás přímo na e-mail: vohralmartin@gmail.com');
+                }
+            } catch (error) {
+                alert('Při odesílání dochází k chybě. Prosím kontaktujte nás přímo na e-mail: vohralmartin@gmail.com');
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
         }
     </script>
 </body>
